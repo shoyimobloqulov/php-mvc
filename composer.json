@@ -1,0 +1,25 @@
+{
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "autoload": {
+    "classmap": ["core"],
+    "psr-4": {
+      "App\\": "app",
+      "Controller\\" : "app/Controllers",
+      "handler\\": "app/Handler",
+      "Models\\" : "models"
+    },
+    "files": [
+      "routes/web.php",
+      "config/Core.php"
+    ]
+  },
+
+  "require": {
+    "php": ">=7.4",
+    "ext-pdo": "*",
+    "ext-curl": "*",
+    "ext-mbstring": "*"
+  }
+}
