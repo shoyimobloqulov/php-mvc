@@ -17,4 +17,4 @@
     Router::get('logout',[LoginController::class,'logout']);
 
     Router::get('reset',[LoginController::class,'resetView']);
-    Router::get('code/check',[LoginController::class,'newPassword']);
+    Router::post('code/check',[LoginController::class,'newPassword']);

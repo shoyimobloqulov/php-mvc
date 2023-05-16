@@ -20,6 +20,7 @@
     "php": ">=7.4",
     "ext-pdo": "*",
     "ext-curl": "*",
-    "ext-mbstring": "*"
+    "ext-mbstring": "*",
+    "phpmailer/phpmailer": "dev-master"
   }
 }

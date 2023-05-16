@@ -88,8 +88,10 @@
             $row = $user->selectAll([
                 "email" => $email
             ]);
+
             if (count($row) > 0){
                 $mail = new PHPMailer(true);
+
                 try {
                     //Server settings
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -158,18 +160,32 @@
             ]);
 
             if (count($row) >= 1){
-                $_SESSION['success'] = "Muofaqiyatli almashtirildi";
 
-                $user->update([
-                    "password" => $password
-                ],['id' => $row[0]['id']]);
+                $password1 = $row[0]['password'];
+                if ($password1 == $password){
+                    $user->update([
+                        "password" => $password
+                    ],['id' => $row[0]['id']]);
 
-                $_SESSION['date'] = [
-                    "name" => $row[0]["name"],
-                    "email" => $row[0]["email"],
-                ];
+                    $_SESSION['date'] = [
+                        "name" => $row[0]["name"],
+                        "email" => $row[0]["email"],
+                    ];
 
-                $this->redirect('/');
+                    $user->update([
+                        "code" => 0,
+                        "status" => "success"
+                    ],['id' => $row[0]['id']]);
+
+                    $_SESSION['success'] = "Muofaqiyatli almashtirildi";
+
+                    $this->redirect('/');
+                }
+                else{
+                    $_SESSION['error'] = "Parol xato qaytadan kiriting";
+                    $this->redirect('/reset');
+                }
+
             }else {
                 $_SESSION['error'] = "Malumot jonatishdagi hatolik, Bunday foydalanuvchi mavjud emas.";
                 $this->redirect('/reset');

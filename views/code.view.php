@@ -16,7 +16,7 @@
         <h1>Online Jadval</h1>
     </div>
     <div class="login-box" style="height: 400px">
-        <form class="forget-f" action="">
+        <form class="forget-f" action="/code/email" method="post">
             <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Qayta tiklash</h3>
             <div class="form-group">
                 <label class="control-label">EMAIL</label>

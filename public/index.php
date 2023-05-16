@@ -1,5 +1,6 @@
 <?php
-
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
     require __DIR__ . '/../vendor/autoload.php';
     session_start();
     $app = new App();
