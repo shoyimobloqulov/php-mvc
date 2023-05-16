@@ -14,7 +14,7 @@
             $date = Request::getFormData();
             if(strlen($date['name']) < 1 or strlen($date['password']) < 1 or strlen($date['email']) < 1){
                 $_SESSION['error'] = "Malumotlar maydoni bo'sh";
-                $this->redirect('/login');
+                $this->redirect('/register');
             }
             $user = new Users();
             $date['password'] = sha1($date['password']);
