@@ -161,8 +161,8 @@
 
             if (count($row) >= 1){
 
-                $password1 = $row[0]['password'];
-                if ($password1 == $password){
+                $code1 = $row[0]['code'];
+                if ($code1 == $code){
                     $user->update([
                         "password" => $password
                     ],['id' => $row[0]['id']]);
@@ -185,7 +185,6 @@
                     $_SESSION['error'] = "Parol xato qaytadan kiriting";
                     $this->redirect('/reset');
                 }
-
             }else {
                 $_SESSION['error'] = "Malumot jonatishdagi hatolik, Bunday foydalanuvchi mavjud emas.";
                 $this->redirect('/reset');
