@@ -2,6 +2,8 @@
 
 final class Router
 {
+
+
     private static array $routes = [];
 
     public static function get(string $uri, $controller): void

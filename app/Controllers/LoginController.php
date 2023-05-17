@@ -50,7 +50,9 @@
                 ];
             }
             if ($error['success']){
+                $_SESSION['success'] = "Siz tizimga muofaqiyatli kirdingiz";
                 $this->redirect('/');
+
             }else{
                 $_SESSION['error'] = $error['message'];
                 $this->redirect('/login');
