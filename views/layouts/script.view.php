@@ -6,6 +6,14 @@
 <script src="../../public/assets/js/plugins/pace.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script type="text/javascript" src="../../public/assets/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../public/assets/js/plugins/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $('#sampleTable').DataTable();
+    $('#demoSelect').select2();
+    $('#demoSelect1').select2();
+</script>
 <script type="text/javascript">
     $('#delete').click(function(){
         swal({
@@ -27,7 +35,6 @@
     });
 </script>
 
-<script type="text/javascript">$('#sampleTable').DataTable();</script>
 
 <script>
     toastr.options = {
@@ -45,9 +52,7 @@ if (!empty($_SESSION['error'])){
     <?
     unset($_SESSION['error']);
 }
-?>
 
-<?php
 if (!empty($_SESSION['success'])){
     ?>
     <script>toastr.success("<?=$_SESSION['success']?>")</script>

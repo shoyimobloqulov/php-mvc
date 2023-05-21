@@ -1,98 +1,26 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
-    <!-- Twitter meta-->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@u">
-    <meta property="twitter:creator" content="@u">
-    <!-- Open Graph Meta-->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Online Jadval">
-    <meta property="og:title" content="Tizimlashtirilgan Admin">
-    <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
-    <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
-    <meta property="og:description" content="">
-    <title>Yo'nalishlar</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="app sidebar-mini">
-<!-- Navbar-->
-<header class="app-header"><a class="app-header__logo" href="index.html">Admin</a>
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-    <!-- Navbar Right Menu-->
-    <ul class="app-nav">
-        <li class="app-search">
-            <input class="app-search__input" type="search" placeholder="Search">
-            <button class="app-search__button"><i class="fa fa-search"></i></button>
-        </li>
-        <!-- User Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-            <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                <li><a class="dropdown-item" href="../../settings.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                <li><a class="dropdown-item" href="../login.view.php"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-</header>
-<!-- Sidebar menu-->
-<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-<aside class="app-sidebar">
-    <div class="app-sidebar__user">
-        <div class="app-sidebar__user-avatar">
-            <i class="fa fa-user"></i>
-        </div>
-        <div>
-            <p class="app-sidebar__user-name">Rustam Omonov</p>
-            <p class="app-sidebar__user-designation">Frontend Developer</p>
-        </div>
-    </div>
-    <ul class="app-menu">
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">Fakultet</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-            <ul class="treeview-menu">
-                <li><a class="treeview-item" href="../fakulty/fakulty-eye.view.php"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
-                <li><a class="treeview-item" href="../fakulty/fakulty-add.view.php"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
-            </ul>
-        </li>
-        <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-sitemap"></i><span class="app-menu__label">Yo'nalish</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-            <ul class="treeview-menu">
-                <li><a class="treeview-item active" href="/direction-eye.html"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
-                <li><a class="treeview-item" href="d.html"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
-            </ul>
-        </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Guruh</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-            <ul class="treeview-menu">
-                <li><a class="treeview-item" href="../group/group-eye.html"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
-                <li><a class="treeview-item" href="../group/group-add.html"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
-            </ul>
-        </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-graduation-cap"></i><span class="app-menu__label">Talabalar</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-            <ul class="treeview-menu">
-                <li><a class="treeview-item" href="../student/student-eye.html"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
-                <li><a class="treeview-item" href="../student/student-add.html"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
-            </ul>
-        </li>
-    </ul>
-</aside>
+<?php include_once  __DIR__.'/../layouts/head.view.php'?>
+<body>
+<?php include_once  __DIR__.'/../layouts/navbar.view.php'?>
+<?php include_once  __DIR__.'/../layouts/sidebar.view.php'?>
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-dashboard"></i>Yo'nalishlar</h1>
-            <p>Barcha Tizimda mavjud Yo'nalishlar</p>
+            <h1><i class="fa fa-dashboard"></i>Guruhlar</h1>
+            <p>Barcha Tizimda mavjud Guruhlar</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item"><a href="#">Yo'nalishlar</a></li>
+            <li class="breadcrumb-item"><a href="#">Guruhlar</a></li>
         </ul>
     </div>
     <div class="row">
+        <div class="col-md-12">
+            <div class="float-right mb-3">
+                <a class="btn btn-success" href="./fakulty/create"><i class="fa fa-plus"></i> Qo'shish</a>
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
@@ -102,6 +30,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nomi</th>
+                                <th>Yo'nalish</th>
                                 <th>Fakulteti</th>
                                 <th>Amallar</th>
                             </tr>
@@ -109,11 +38,12 @@
                             <tbody>
                             <tr>
                                 <td>1</td>
+                                <td>Matematika-213</td>
                                 <td>Amaliy Matematika</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" id="demoSwal" href="#">
@@ -124,11 +54,13 @@
                             </tr>
                             <tr>
                                 <td>2</td>
+
+                                <td>Matematika-213</td>
                                 <td>Tiger Nixon</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -139,11 +71,13 @@
                             </tr>
                             <tr>
                                 <td>3</td>
+
+                                <td>Matematika-213</td>
                                 <td>Garrett Winter</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -154,11 +88,13 @@
                             </tr>
                             <tr>
                                 <td>4</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Ashton Cox</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -169,11 +105,13 @@
                             </tr>
                             <tr>
                                 <td>5</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Cedric Kelly</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -184,11 +122,13 @@
                             </tr>
                             <tr>
                                 <td>6</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Matematika Fakulteti</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -199,11 +139,13 @@
                             </tr>
                             <tr>
                                 <td>7</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Brielle Williamson</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -214,11 +156,13 @@
                             </tr>
                             <tr>
                                 <td>8</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Herrod Chandler</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -227,14 +171,15 @@
                                     </div>
                                 </td>
                             </tr>
-
                             <tr>
                                 <td>9</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Tiger Nixon</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="direction-edit.html">
+                                        <a class="btn btn-primary" href="group-edit.html">
                                             <i class="fa fa-lg fa-edit"></i>
                                         </a>
                                         <a class="btn btn-primary" href="#">
@@ -245,6 +190,8 @@
                             </tr>
                             <tr>
                                 <td>10</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Garrett Winter</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
@@ -261,6 +208,8 @@
 
                             <tr>
                                 <td>11</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Tiger Nixon</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
@@ -276,6 +225,8 @@
                             </tr>
                             <tr>
                                 <td>12</td>
+
+                                <td>Dasturlash-213</td>
                                 <td>Garrett Winter</td>
                                 <td>Fizika fakulteti</td>
                                 <td>
@@ -297,39 +248,6 @@
             </div>
         </div></div>
 </main>
-<!-- Essential javascripts for application to work-->
-<script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/main.js"></script>
-<!-- The javascript plugin to display page loading on top-->
-<script src="../js/plugins/pace.min.js"></script>
-<script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="../js/plugins/dataTables.bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/bootstrap-notify.min.js"></script>
-<script type="text/javascript" src="../js/plugins/sweetalert.min.js"></script>
-<script type="text/javascript">
-    $('#demoSwal').click(function(){
-        swal({
-            title: "Malumotlar o'chishiga rozimisiz?",
-            text: "",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Ha, roziman!",
-            cancelButtonText: "Yoq, orqaga qaytish!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }, function(isConfirm) {
-            if (isConfirm) {
-                swal("Deleted!", "Malumot o'chirildi", "success");
-            } else {
-                swal("O'chirilmadi", "Orqaga qaytildi", "error");
-            }
-        });
-    });
-</script>
-
-<script type="text/javascript">$('#sampleTable').DataTable();</script>
+<?php include_once  __DIR__.'/../layouts/script.view.php'?>
 </body>
 </html>

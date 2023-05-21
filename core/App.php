@@ -3,9 +3,9 @@ final class App{
     private bool $debug = false;
     public function __construct()
     {
-        if (!(isset($_SESSION['login-success']) or isset($_SESSION['date']))){
-            header("location: /login");
-        }
+        // if (!(isset($_SESSION['login-success']) or isset($_SESSION['date']))){
+        //     header("location: /login");
+        // }
     }
     public function run(): void
     {
