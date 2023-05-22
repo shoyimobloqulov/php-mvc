@@ -1,45 +1,45 @@
 <?php
 namespace App\Controllers;
 use Controller;
-use Models\Users;
+use Models\Group;
 use Request;
 class GroupController extends Controller
 {
     public function index(){
-        $fakulty = new Fakulty();
-        $fakultys = $fakulty->selectAllData();
-        $this->view('fakulty/fakulty-eye',compact('fakultys'));
+        $group = new Group();
+        $groups = $group->selectAllData();
+        $this->view('group/group-eye',compact('groups'));
     }
 
     public function delete(int $id):void {
-        $fakulty = new Fakulty();
-        $fakulty->delete(['id'=>$id]);
+        $group = new Group();
+        $group->delete(['id'=>$id]);
         $_SESSION['success'] = "Fakultet o'chirildi";
-        $this->redirect('/fakulty');
+        $this->redirect('/group');
     }
 
     public function create()
     {
-        $this->view('fakulty/fakulty-add');
+        $this->view('group/group-add');
     }
 
 
     public function store():void
     {
         $date = Request::getFormData();
-        $fakulty = new Fakulty();
+        $group = new Group();
         if (!empty($date['name'])) {
-            $fakulty->add($date);
+            $group->add($date);
             $_SESSION['success'] = "Fakultet qo'shildi";
         }else{
             $_SESSION['error'] = "Malumotlar maydoni to'ldirilmagan";
         }
-        $this->redirect('/fakulty');
+        $this->redirect('/group');
     }
 
     public function edit($id) : void
     {
-        $fakulty = new Fakulty();
+        $group = new Group();
         $row = $fakulty->selectOne(["id" => $id]);
 
         $this->view('fakulty/fakulty-edit',compact('row'));
@@ -47,7 +47,7 @@ class GroupController extends Controller
 
     public function update($id)
     {
-        $fakulty = new Fakulty();
+        $fakulty = new Group();
         $data = Request::getFormData();
         $fakulty->update($data,["id" => $id]);
         $_SESSION['success'] = "Fakultet taxrirlandi";
