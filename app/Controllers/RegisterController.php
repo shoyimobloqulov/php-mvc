@@ -19,6 +19,7 @@
             $user = new Users();
             $date['password'] = sha1($date['password']);
             $user->add($date);
+            $_SESSION['success'] = "Muofaqiyatli ro'yhatdan o'tdingiz";
             $this->redirect('/login');
         }
     }

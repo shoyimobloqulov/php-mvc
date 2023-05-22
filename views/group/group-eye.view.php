@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="float-right mb-3">
-                <a class="btn btn-success" href="./fakulty/create"><i class="fa fa-plus"></i> Qo'shish</a>
+                <a class="btn btn-success" href="./group/create"><i class="fa fa-plus"></i> Qo'shish</a>
             </div>
         </div>
         <div class="col-md-12">
@@ -36,211 +36,25 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                foreach ($group as $g){
+                            ?>
                             <tr>
                                 <td>1</td>
-                                <td>Matematika-213</td>
-                                <td>Amaliy Matematika</td>
-                                <td>Fizika fakulteti</td>
+                                <td><?=$g['name']?></td>
+                                <td><?=$direction->DirectionName($g['direction_id'])?></td>
+                                <td><?=$fakulty->FakultyName($g['fakulty_id'])?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" id="demoSwal" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
+                                        <form action="/group/delete?id=<?=$g['id']?>" method="post">
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete </button>
+                                        </form>
+                                        <a href="/group/edit?id=<?=$g['id']?>" class="btn btn-info"> <i class="fa fa-edit"></i> Taxrirlash</a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-
-                                <td>Matematika-213</td>
-                                <td>Tiger Nixon</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-
-                                <td>Matematika-213</td>
-                                <td>Garrett Winter</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Ashton Cox</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Cedric Kelly</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Matematika Fakulteti</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Brielle Williamson</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Herrod Chandler</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Tiger Nixon</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="group-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Garrett Winter</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>11</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Tiger Nixon</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-
-                                <td>Dasturlash-213</td>
-                                <td>Garrett Winter</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
+                            <?}?>
                             </tbody>
                         </table>
                     </div>

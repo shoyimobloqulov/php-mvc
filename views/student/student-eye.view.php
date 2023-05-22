@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="float-right mb-3">
-                <a class="btn btn-success" href="./fakulty/create"><i class="fa fa-plus"></i> Qo'shish</a>
+                <a class="btn btn-success" href="./student/create"><i class="fa fa-plus"></i> Qo'shish</a>
             </div>
         </div>
         <div class="col-md-12">
@@ -39,233 +39,31 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                                $id = 1;
+                                foreach ($students as $s){
+                            ?>
                             <tr>
-                                <td>1</td>
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Matematika-213</td>
-                                <td>Amaliy Matematika</td>
-                                <td>Fizika fakulteti</td>
+                                <td><?=$id?></td>
+                                <td><?=$s['login']?></td>
+                                <td><?=$s['name']?></td>
+                                <td><?=$student->guruhName($s['fa'])?></td>
+                                <td><?=$student->yunalishName($s['fa'])?></td>
+                                <td><?=$student->fakultetName($s['fa'])?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" id="demoSwal" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
+                                        <form action="/student/delete?id=<?=$s['id']?>" method="post">
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete </button>
+                                        </form>
+                                        <a href="/student/edit?id=<?=$s['id']?>" class="btn btn-info"> <i class="fa fa-edit"></i> Taxrirlash</a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>12345678910</td>
-
-                                <td>Rustam Omonov</td>
-                                <td>Matematika-213</td>
-                                <td>Tiger Nixon</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Matematika-213</td>
-                                <td>Garrett Winter</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Ashton Cox</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Cedric Kelly</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Matematika Fakulteti</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Brielle Williamson</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Herrod Chandler</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Tiger Nixon</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Garrett Winter</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>11</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Tiger Nixon</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-
-                                <td>12345678910</td>
-                                <td>Rustam Omonov</td>
-                                <td>Dasturlash-213</td>
-                                <td>Garrett Winter</td>
-                                <td>Fizika fakulteti</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn btn-primary" href="student-edit.html">
-                                            <i class="fa fa-lg fa-edit"></i>
-                                        </a>
-                                        <a class="btn btn-primary" href="#">
-                                            <i class="fa fa-lg fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-
+                            <?php
+                                $id += 1;
+                                }
+                            ?>
                             </tbody>
                         </table>
                     </div>

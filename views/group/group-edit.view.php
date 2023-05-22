@@ -23,35 +23,46 @@
             <div class="tile">
                 <div class="row">
                     <div class="col-lg-6">
-                        <form>
+                        <form action="/group/update?id=<?=$row['id']?>" method="post">
+                            <input type="hidden" name="_method" value="PUT" />
                             <div class="form-group">
                                 <label for="">Nomi</label>
-                                <input value="Intelektual-901-56" class="form-control" id="" type="text" aria-describedby="emailHelp" placeholder="Name email"><small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small>
+                                <input class="form-control" value="<?=$row['name']?>" id="" type="text" aria-describedby="emailHelp" placeholder="Name" name="name">
                             </div>
                             <div class="form-group">
                                 <label for="">Fakulteti</label>
-                                <select class="form-control" id="demoSelect" multiple="">
+                                <select class="form-control" id="demoSelect" name="fakulty_id">
                                     <optgroup label="Fakultetni tanlang">
-                                        <option>Fizika</option>
-                                        <option>Matematika</option>
-                                        <option>Geografiya</option>
+                                        <?php
+                                        foreach ($fakultys as $f){
+                                            ?>
+                                            <option value="<?=$f['id']?>"><?=$f['name']?></option>
+                                            <?
+                                        }
+                                        ?>
                                     </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="">Yo'nalish</label>
-                                <select class="form-control" id="demoSelect1" multiple="">
-                                    <optgroup label="Fakultetni tanlang">
-                                        <option>Dastur injenering</option>
-                                        <option>Suniy intelekt</option>
+                                <select class="form-control" id="demoSelect1" name="direction_id">
+                                    <optgroup label="Yo'nalishni tanlang">
+                                        <?php
+                                        foreach ($directions as $d){
+                                            ?>
+                                            <option value="<?=$d['id']?>"><?=$d['name']?></option>
+                                            <?
+                                        }
+                                        ?>
                                     </optgroup>
                                 </select>
                             </div>
+
+                            <div class="tile-footer">
+                                <button class="btn btn-primary" type="submit">Qo'shish</button>
+                            </div>
                         </form>
                     </div>
-                </div>
-                <div class="tile-footer">
-                    <button class="btn btn-primary" type="submit">Qo'shish</button>
                 </div>
             </div>
         </div>

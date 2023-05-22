@@ -15,4 +15,12 @@ class Direction extends Model
         $row = $fakulty->selectOne(['id' => $id]);
         return $row['name'];
     }
+    public function DirectionName($id){
+        $direction = new Direction();
+        $row = $direction->selectOne(['id' => $id]);
+        if (count($row) > 0){
+            return $row['name'];
+        }
+        return -1;
+    }
 }

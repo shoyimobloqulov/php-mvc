@@ -19,14 +19,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="float-right mb-3">
-                <a class="btn btn-success" href="./fakulty/create"><i class="fa fa-plus"></i> Qo'shish</a>
+                <a class="btn btn-success" href="./direction/create"><i class="fa fa-plus"></i> Qo'shish</a>
             </div>
         </div>
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
                     <div class="table-responsive">
-                        <a href="/direction/create" class="btn btn-primary float-right mb-3"><i class="fa fa-plus"></i> Qo'shish</a>
                         <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
                             <tr>

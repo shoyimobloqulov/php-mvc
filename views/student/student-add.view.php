@@ -25,7 +25,7 @@
                         <form>
                             <div class="form-group">
                                 <label for="">FIO</label>
-                                <input value="" class="form-control" id="" type="text" aria-describedby="emailHelp" placeholder=""><small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone else.</small>
+                                <input value="" class="form-control" id="" type="text" aria-describedby="emailHelp" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="">ID</label>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Fakulteti</label>
-                                <select class="form-control" id="demoSelect" multiple="">
+                                <select class="form-control" id="demoSelect" name="fakulty_id">
                                     <optgroup label="Fakultetni tanlang">
                                         <option>Fizika</option>
                                         <option>Matematika</option>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Yo'nalish</label>
-                                <select class="form-control" id="demoSelect1" multiple="">
+                                <select class="form-control" id="demoSelect1" name="direction_id">
                                     <optgroup label="Fakultetni tanlang">
                                         <option>Dastur injenering</option>
                                         <option>Suniy intelekt</option>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Guruh</label>
-                                <select class="form-control" id="demoSelect2" multiple="">
+                                <select class="form-control" id="demoSelect2" name="group_id">
                                     <optgroup label="Fakultetni tanlang">
                                         <option>102-guruh</option>
                                         <option>101-guruh</option>

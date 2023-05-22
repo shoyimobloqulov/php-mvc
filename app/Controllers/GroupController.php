@@ -1,36 +1,46 @@
 <?php
 namespace App\Controllers;
 use Controller;
-use Models\Group;
+use Models\Direction;
+use Models\Fakulty;
+use Models\Groups;
 use Request;
 class GroupController extends Controller
 {
     public function index(){
-        $group = new Group();
-        $groups = $group->selectAllData();
-        $this->view('group/group-eye',compact('groups'));
+        $g = new Groups();
+        $fakulty = new Fakulty();
+        $direction = new Direction();
+        $group = $g->selectAllData();
+        $this->view('group/group-eye',compact('group','fakulty','direction'));
     }
 
     public function delete(int $id):void {
-        $group = new Group();
+        $group = new Groups();
         $group->delete(['id'=>$id]);
-        $_SESSION['success'] = "Fakultet o'chirildi";
+        $_SESSION['success'] = "Guruh    o'chirildi";
         $this->redirect('/group');
     }
 
     public function create()
     {
-        $this->view('group/group-add');
+        $fakulty = new Fakulty();
+        $direction = new Direction();
+
+        $fakultys = $fakulty->selectAllData();
+        $directions= $direction->selectAllData();
+
+        $this->view('group/group-add',compact('fakultys','directions'));
     }
 
 
     public function store():void
     {
         $date = Request::getFormData();
-        $group = new Group();
+        $group = new Groups();
         if (!empty($date['name'])) {
             $group->add($date);
-            $_SESSION['success'] = "Fakultet qo'shildi";
+            $_SESSION['success'] = "Guruh qo'shildi";
         }else{
             $_SESSION['error'] = "Malumotlar maydoni to'ldirilmagan";
         }
@@ -39,18 +49,24 @@ class GroupController extends Controller
 
     public function edit($id) : void
     {
-        $group = new Group();
-        $row = $fakulty->selectOne(["id" => $id]);
+        $fakulty = new Fakulty();
+        $direction = new Direction();
 
-        $this->view('fakulty/fakulty-edit',compact('row'));
+        $fakultys = $fakulty->selectAllData();
+        $directions= $direction->selectAllData();
+
+        $group = new Groups();
+        $row = $group->selectOne(["id" => $id]);
+
+        $this->view('group/group-edit',compact('row','fakultys','directions'));
     }
 
     public function update($id)
     {
-        $fakulty = new Group();
+        $group = new Groups();
         $data = Request::getFormData();
-        $fakulty->update($data,["id" => $id]);
-        $_SESSION['success'] = "Fakultet taxrirlandi";
-        $this->redirect('/fakulty');
+        $group->update($data,["id" => $id]);
+        $_SESSION['success'] = "Guruh taxrirlandi";
+        $this->redirect('/group');
     }
 }
