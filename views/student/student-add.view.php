@@ -22,22 +22,26 @@
             <div class="tile">
                 <div class="row">
                     <div class="col-lg-6">
-                        <form>
+                        <form action="/student/store" method="post">
                             <div class="form-group">
                                 <label for="">FIO</label>
-                                <input value="" class="form-control" id="" type="text" aria-describedby="emailHelp" placeholder="">
+                                <input value="" class="form-control" id="" type="text" placeholder="Name" name="name">
                             </div>
                             <div class="form-group">
-                                <label for="">ID</label>
-                                <input value="" class="form-control" id="" type="text" aria-describedby="emailHelp" placeholder="ID">
+                                <label for="">Login</label>
+                                <input value="" class="form-control" id="" type="text" placeholder="Login/ID" name="login">
                             </div>
                             <div class="form-group">
                                 <label for="">Fakulteti</label>
                                 <select class="form-control" id="demoSelect" name="fakulty_id">
                                     <optgroup label="Fakultetni tanlang">
-                                        <option>Fizika</option>
-                                        <option>Matematika</option>
-                                        <option>Geografiya</option>
+                                        <?php
+                                        foreach ($fakulty as $f){
+                                            ?>
+                                            <option value="<?=$f['id']?>"><?=$f['name']?></option>
+                                            <?
+                                        }
+                                        ?>
                                     </optgroup>
                                 </select>
                             </div>
@@ -45,8 +49,13 @@
                                 <label for="">Yo'nalish</label>
                                 <select class="form-control" id="demoSelect1" name="direction_id">
                                     <optgroup label="Fakultetni tanlang">
-                                        <option>Dastur injenering</option>
-                                        <option>Suniy intelekt</option>
+                                        <?php
+                                        foreach ($direction as $d){
+                                            ?>
+                                            <option value="<?=$d['id']?>"><?=$d['name']?></option>
+                                            <?
+                                        }
+                                        ?>
                                     </optgroup>
                                 </select>
                             </div>
@@ -54,16 +63,22 @@
                                 <label for="">Guruh</label>
                                 <select class="form-control" id="demoSelect2" name="group_id">
                                     <optgroup label="Fakultetni tanlang">
-                                        <option>102-guruh</option>
-                                        <option>101-guruh</option>
+                                        <?php
+                                        foreach ($group as $g){
+                                            ?>
+                                            <option value="<?=$g['id']?>"><?=$g['name']?></option>
+                                            <?
+                                        }
+                                        ?>
                                     </optgroup>
                                 </select>
                             </div>
+
+                            <div class="tile-footer">
+                                <button class="btn btn-primary" type="submit">Qo'shish</button>
+                            </div>
                         </form>
                     </div>
-                </div>
-                <div class="tile-footer">
-                    <button class="btn btn-primary" type="submit">Qo'shish</button>
                 </div>
             </div>
         </div>

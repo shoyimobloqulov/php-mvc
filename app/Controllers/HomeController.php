@@ -8,6 +8,9 @@
     {
         public function __invoke(): void
         {
+            if (!isset($_SESSION['login-success'])){
+                header("location: /login");
+            }
             $this->view('home');
         }
     }

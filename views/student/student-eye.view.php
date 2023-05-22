@@ -47,9 +47,9 @@
                                 <td><?=$id?></td>
                                 <td><?=$s['login']?></td>
                                 <td><?=$s['name']?></td>
-                                <td><?=$student->guruhName($s['fa'])?></td>
-                                <td><?=$student->yunalishName($s['fa'])?></td>
-                                <td><?=$student->fakultetName($s['fa'])?></td>
+                                <td><?=$group->guruhName($s['group_id'])?></td>
+                                <td><?=$direction->DirectionName($s['direction_id'])?></td>
+                                <td><?=$fakulty->FakultyName($s['fakulty_id'])?></td>
                                 <td>
                                     <div class="btn-group">
                                         <form action="/student/delete?id=<?=$s['id']?>" method="post">

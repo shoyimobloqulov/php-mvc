@@ -1,6 +1,8 @@
 <?php
 namespace App\Controllers;
 use Controller;
+use Models\Direction;
+use Models\Fakulty;
 use Models\Groups;
 use Models\Student;
 use Request;
@@ -8,20 +10,30 @@ class StudentController extends Controller
 {
     public function index(){
         $student = new Student();
+        $fakulty = new Fakulty();
+        $direction = new Direction();
+        $group = new Groups();
         $students = $student->selectAllData();
-        $this->view('student/student-eye',compact('students','student'));
+        $this->view('student/student-eye',compact('students','fakulty','direction','group'));
     }
 
     public function delete(int $id):void {
         $fakulty = new Student();
         $fakulty->delete(['id'=>$id]);
-        $_SESSION['success'] = "Fakultet o'chirildi";
-        $this->redirect('/fakulty');
+        $_SESSION['success'] = "Student o'chirildi";
+        $this->redirect('/student');
     }
 
     public function create()
     {
-        $this->view('student/student-add');
+        $f = new Fakulty();
+        $d = new Direction();
+        $g = new Groups();
+
+        $fakulty = $f->selectAllData();
+        $direction = $d->selectAllData();
+        $group = $g->selectAllData();
+        $this->view('student/student-add',compact('fakulty','direction','group'));
     }
 
 
@@ -31,7 +43,7 @@ class StudentController extends Controller
         $fakulty = new Student();
         if (!empty($date['name'])) {
             $fakulty->add($date);
-            $_SESSION['success'] = "Fakultet qo'shildi";
+            $_SESSION['success'] = "Student qo'shildi";
         }else{
             $_SESSION['error'] = "Malumotlar maydoni to'ldirilmagan";
         }
@@ -40,10 +52,18 @@ class StudentController extends Controller
 
     public function edit($id) : void
     {
-        $fakulty = new Student();
-        $row = $fakulty->selectOne(["id" => $id]);
+        $f = new Fakulty();
+        $d = new Direction();
+        $g = new Groups();
 
-        $this->view('student/student-edit',compact('row'));
+        $fakulty = $f->selectAllData();
+        $direction = $d->selectAllData();
+        $group = $g->selectAllData();
+
+        $student = new Student();
+        $row = $student->selectOne(["id" => $id]);
+
+        $this->view('student/student-edit',compact('row','fakulty','direction','group'));
     }
 
     public function update($id)
