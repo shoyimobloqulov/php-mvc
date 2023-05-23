@@ -7,7 +7,7 @@ use Model;
 class Groups extends Model
 {
     protected string $table = 'guruh';
-    public function guruhName($id){
+    public function guruhName($id):string{
         $group = new Groups();
         $row = $group->selectOne(['id' => $id]);
         if (count($row) > 0){

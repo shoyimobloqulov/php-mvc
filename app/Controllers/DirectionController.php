@@ -13,8 +13,8 @@ class DirectionController extends Controller
 
         $directions = new Direction();
         $direction = $directions->selectAllData();
-        
-        $this->view('direction/direction-eye',compact('direction','directions'));
+        $fakulty = new Fakulty();
+        $this->view('direction/direction-eye',compact('direction','fakulty'));
     }
 
     public function delete(int $id):void {

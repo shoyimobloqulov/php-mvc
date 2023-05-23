@@ -31,18 +31,19 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nomi</th>
-                                <th>Fakulteti</th>
+                                <th>Fakultet</th>
                                 <th>Amallar</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
+                                $id = 1;
                                 foreach ($direction as $d) {
                             ?>
                             <tr>
-                                <td>1</td>
+                                <td><?=$id?></td>
                                 <td><?=$d['name']?></td>
-                                <td><?=$directions->FakultyName($d['fakulty_id'])?></td>
+                                <td><?=$fakulty->FakultyName($d['fakulty_id'])?></td>
                                 <td>
                                     <div class="btn-group">
                                         <form action="/direction/delete?id=<?=$d['id']?>" method="post">
@@ -53,7 +54,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            <?}?>
+                            <?php
+                                    $id ++;
+                                } ?>
                             </tbody>
                         </table>
                     </div>
