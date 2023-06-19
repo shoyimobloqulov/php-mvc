@@ -62,4 +62,5 @@ class DirectionController extends Controller
         $_SESSION['success'] = "Yo'nalish taxrirlandi";
         $this->redirect('/direction');
     }
+
 }

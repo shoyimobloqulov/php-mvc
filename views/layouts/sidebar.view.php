@@ -23,6 +23,16 @@
                 <li><a class="treeview-item" href="/direction/create"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
             </ul>
         </li>
+
+        <li class="treeview"><a class="app-menu__item" href="/" data-toggle="treeview">
+                <i class="app-menu__icon fa fa-sitemap"></i><span class="app-menu__label">Kafedra</span>
+                <i class="treeview-indicator fa fa-angle-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/kafedra"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
+                <li><a class="treeview-item" href="/kafedra/create"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
+            </ul>
+        </li>
         <li class="treeview"><a class="app-menu__item" href="/" data-toggle="treeview"><i class="app-menu__icon fa fa-object-group"></i><span class="app-menu__label">Guruh</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="/group"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
@@ -33,6 +43,32 @@
             <ul class="treeview-menu">
                 <li><a class="treeview-item" href="/student"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
                 <li><a class="treeview-item" href="/student/create"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
+            </ul>
+        </li>
+
+        <li class="treeview"><a class="app-menu__item" href="/" data-toggle="treeview"><i class="app-menu__icon fa fa-question-circle" aria-hidden="true"></i><span class="app-menu__label">Amaliyot</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/amaliyot"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
+                <li><a class="treeview-item" href="/amaliyot/create"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a class="app-menu__item" href="/" data-toggle="treeview">
+                <i class="app-menu__icon fa fa-user-circle" aria-hidden="true"></i>
+                <span class="app-menu__label">O'qituvchi</span>
+                <i class="treeview-indicator fa fa-angle-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/teachers"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
+                <li><a class="treeview-item" href="/teachers/create"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
+            </ul>
+        </li>
+
+        <li class="treeview"><a class="app-menu__item" href="/" data-toggle="treeview"><i class="app-menu__icon fa fa-tasks"></i>
+                <span class="app-menu__label">Topshiriq berish</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="/topshiriq"><i class="icon fa fa-eye"></i> Ko'rish</a></li>
+                <li><a class="treeview-item" href="/topshiriq/create"><i class="icon fa fa-plus"></i> Qo'shish</a></li>
             </ul>
         </li>
     </ul>

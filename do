@@ -99,9 +99,9 @@ if(mb_stripos($data, ":")!==false)
     if($method == "serve")
     {
         if(!$argv[2]){
-            exec("php -S localhost:8000 public/index.php");
+            exec("php -S localhost:8000 public/index.view.php");
         }else{
-            exec("php -S localhost:" . $argv[2] . " public/index.php");
+            exec("php -S localhost:" . $argv[2] . " public/index.view.php");
         }
 
     }

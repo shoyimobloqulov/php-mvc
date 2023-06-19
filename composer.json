@@ -21,6 +21,7 @@
     "ext-pdo": "*",
     "ext-curl": "*",
     "ext-mbstring": "*",
-    "phpmailer/phpmailer": "dev-master"
+    "phpmailer/phpmailer": "dev-master",
+    "ext-json": "*"
   }
 }
